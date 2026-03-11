@@ -1,0 +1,421 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arbeit der Zukunft</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: #fff9f0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    overflow-x: hidden;
+  }
+
+  /* Bubbly background blobs */
+  body::before {
+    content: '';
+    position: fixed;
+    top: -100px; left: -100px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, #ffb3c6 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+    animation: float1 8s ease-in-out infinite;
+  }
+  body::after {
+    content: '';
+    position: fixed;
+    bottom: -100px; right: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, #b3d4ff 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+    animation: float2 10s ease-in-out infinite;
+  }
+
+  @keyframes float1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(30px,30px)} }
+  @keyframes float2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-20px,-30px)} }
+
+  .container {
+    max-width: 780px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* TITLE */
+  .title-block {
+    text-align: center;
+    margin-bottom: 50px;
+    animation: dropIn 0.6s ease both;
+  }
+  .title-block h1 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 3rem;
+    background: linear-gradient(135deg, #ff6b9d, #f7b731, #26de81, #45aaf2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 1px;
+    line-height: 1.1;
+  }
+  .title-block .sub {
+    font-size: 1rem;
+    color: #999;
+    margin-top: 6px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  /* ACTORS ROW */
+  .actors {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+    padding: 0 20px;
+    animation: dropIn 0.6s 0.1s ease both;
+  }
+  .actor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .actor-icon {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2.4rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    animation: wiggle 3s ease-in-out infinite;
+  }
+  .human .actor-icon { background: linear-gradient(135deg, #ff6b9d, #ff8e53); animation-delay: 0s; }
+  .robot .actor-icon  { background: linear-gradient(135deg, #45aaf2, #26de81); animation-delay: 1s; }
+  @keyframes wiggle { 0%,100%{transform:rotate(-4deg)} 50%{transform:rotate(4deg)} }
+
+  .actor-label {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.1rem;
+    color: #555;
+  }
+  .actor-label span {
+    display: block;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+  .vs-badge {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.8rem;
+    color: #f7b731;
+    background: white;
+    border-radius: 50%;
+    width: 54px; height: 54px;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 16px rgba(247,183,49,0.35);
+  }
+
+  /* STEPS */
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .step {
+    display: grid;
+    grid-template-columns: 1fr 60px 1fr;
+    align-items: center;
+    gap: 0 10px;
+    animation: slideUp 0.5s ease both;
+  }
+  .step:nth-child(1){animation-delay:0.2s}
+  .step:nth-child(2){animation-delay:0.35s}
+  .step:nth-child(3){animation-delay:0.5s}
+  .step:nth-child(4){animation-delay:0.65s}
+  .step:nth-child(5){animation-delay:0.8s}
+
+  @keyframes slideUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+
+  /* CARDS */
+  .card {
+    border-radius: 18px;
+    padding: 14px 18px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .card:hover { transform: scale(1.03); }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: -20px; right: -20px;
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+  }
+
+  .human-card {
+    background: linear-gradient(135deg, #ff6b9d22, #ff8e5322);
+    border: 2.5px solid #ff6b9d55;
+    color: #cc3366;
+    text-align: right;
+  }
+  .robot-card {
+    background: linear-gradient(135deg, #45aaf222, #26de8122);
+    border: 2.5px solid #45aaf255;
+    color: #1a7acc;
+    text-align: left;
+  }
+
+  .card .step-num {
+    display: inline-block;
+    font-family: 'Fredoka One', cursive;
+    font-size: 0.75rem;
+    background: rgba(255,255,255,0.6);
+    border-radius: 20px;
+    padding: 2px 8px;
+    margin-bottom: 4px;
+    letter-spacing: 1px;
+  }
+  .human-card .step-num { color: #ff6b9d; }
+  .robot-card .step-num { color: #45aaf2; }
+
+  .card .card-title {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 3px;
+  }
+  .card .card-desc {
+    font-size: 0.8rem;
+    font-weight: 600;
+    opacity: 0.8;
+  }
+
+  /* empty card placeholder */
+  .card-empty { visibility: hidden; }
+
+  /* ARROW */
+  .arrow-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    position: relative;
+  }
+  .arrow-circle {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    z-index: 2;
+    flex-shrink: 0;
+  }
+  .arrow-line {
+    width: 3px;
+    background: linear-gradient(to bottom, #f7b731, #ff6b9d55);
+    border-radius: 2px;
+    height: 30px;
+  }
+
+  /* Step connector colors */
+  .step-1 .arrow-circle { background: linear-gradient(135deg, #ff6b9d, #f7b731); }
+  .step-2 .arrow-circle { background: linear-gradient(135deg, #f7b731, #26de81); }
+  .step-3 .arrow-circle { background: linear-gradient(135deg, #26de81, #45aaf2); }
+  .step-4 .arrow-circle { background: linear-gradient(135deg, #45aaf2, #a55eea); }
+  .step-5 .arrow-circle { background: linear-gradient(135deg, #a55eea, #ff6b9d); }
+
+  /* RUN FINALE */
+  .finale {
+    margin-top: 40px;
+    text-align: center;
+    animation: dropIn 0.7s 1s ease both;
+  }
+  .run-badge {
+    display: inline-block;
+    font-family: 'Fredoka One', cursive;
+    font-size: 2.8rem;
+    padding: 16px 60px;
+    border-radius: 60px;
+    background: linear-gradient(135deg, #ff6b9d, #f7b731, #26de81, #45aaf2, #a55eea);
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+    color: white;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    letter-spacing: 4px;
+  }
+  @keyframes gradientShift {
+    0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%}
+  }
+  .finale .run-label {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #aaa;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  @keyframes dropIn { from{opacity:0;transform:translateY(-20px)} to{opacity:1;transform:translateY(0)} }
+
+  /* Connector line between steps */
+  .connector {
+    display: flex;
+    justify-content: center;
+    height: 28px;
+  }
+  .connector-line {
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, #e0e0e0, #e0e0e0);
+    border-radius: 2px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="title-block">
+    <h1>Arbeit der Zukunft</h1>
+    <div class="sub">Mensch & KI im Workflow</div>
+  </div>
+
+  <div class="actors">
+    <div class="actor human">
+      <div class="actor-icon">🧑‍💼</div>
+      <div class="actor-label">Visionär<span>menschlich 😊</span></div>
+    </div>
+    <div class="vs-badge">⚡</div>
+    <div class="actor robot">
+      <div class="actor-icon">🤖</div>
+      <div class="actor-label">KI-Agent<span>automatisiert</span></div>
+    </div>
+  </div>
+
+  <div class="steps">
+
+    <!-- STEP 1 -->
+    <div class="step step-1">
+      <div class="card human-card">
+        <span class="step-num">SCHRITT 1</span>
+        <span class="card-title">Vision entwickeln</span>
+        <span class="card-desc">Mensch bringt Idee & Richtung</span>
+      </div>
+      <div class="arrow-col">
+        <div class="arrow-circle">➡️</div>
+      </div>
+      <div class="card robot-card">
+        <span class="step-num">KI-AUFGABE</span>
+        <span class="card-title">Vision validieren</span>
+        <span class="card-desc">Prüft Machbarkeit & Konsistenz der Idee</span>
+      </div>
+    </div>
+
+    <div class="connector"><div class="connector-line"></div></div>
+
+    <!-- STEP 2 -->
+    <div class="step step-2">
+      <div class="card human-card">
+        <span class="step-num">SCHRITT 2</span>
+        <span class="card-title">Konzept validieren</span>
+        <span class="card-desc">Evtl. Anpassungen vornehmen</span>
+      </div>
+      <div class="arrow-col">
+        <div class="arrow-circle">🔄</div>
+      </div>
+      <div class="card robot-card">
+        <span class="step-num">KI-AUFGABE</span>
+        <span class="card-title">Konzept erstellen</span>
+        <span class="card-desc">Macht Konzept umsetzungsbereit + Anpassungsvorschläge</span>
+      </div>
+    </div>
+
+    <div class="connector"><div class="connector-line"></div></div>
+
+    <!-- STEP 3 -->
+    <div class="step step-3">
+      <div class="card human-card">
+        <span class="step-num">SCHRITT 3</span>
+        <span class="card-title">Accounts einrichten</span>
+        <span class="card-desc">Setup nach KI-Anleitung</span>
+      </div>
+      <div class="arrow-col">
+        <div class="arrow-circle">📋</div>
+      </div>
+      <div class="card robot-card">
+        <span class="step-num">KI-AUFGABE</span>
+        <span class="card-title">To-Do Liste</span>
+        <span class="card-desc">Account-Setup-Plan für das Konzept → Eingerichtet ✓</span>
+      </div>
+    </div>
+
+    <div class="connector"><div class="connector-line"></div></div>
+
+    <!-- STEP 4 -->
+    <div class="step step-4">
+      <div class="card human-card">
+        <span class="step-num">SCHRITT 4</span>
+        <span class="card-title">Testlauf starten</span>
+        <span class="card-desc">Überwacht & validiert Ergebnis</span>
+      </div>
+      <div class="arrow-col">
+        <div class="arrow-circle">🧪</div>
+      </div>
+      <div class="card robot-card">
+        <span class="step-num">KI-AUFGABE</span>
+        <span class="card-title">AI-Agenten erstellen</span>
+        <span class="card-desc">Automatisierung des Business / der Vision</span>
+      </div>
+    </div>
+
+    <div class="connector"><div class="connector-line"></div></div>
+
+    <!-- STEP 5 -->
+    <div class="step step-5">
+      <div class="card human-card">
+        <span class="step-num">SCHRITT 5</span>
+        <span class="card-title">Validiert ✅</span>
+        <span class="card-desc">Mensch gibt grünes Licht</span>
+      </div>
+      <div class="arrow-col">
+        <div class="arrow-circle">🚀</div>
+      </div>
+      <div class="card robot-card">
+        <span class="step-num">STATUS</span>
+        <span class="card-title">System bereit</span>
+        <span class="card-desc">Alle Prozesse automatisiert & live</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="finale">
+    <div class="run-badge">▶ RUN</div>
+    <div class="run-label">Business läuft automatisiert</div>
+  </div>
+
+</div>
+</body>
+</html>
