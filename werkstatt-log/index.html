@@ -42,4 +42,40 @@ del {
     text-transform: uppercase;
 }
 </style>
+
+    <!-- Einfaches Eingabefeld auf deiner Fortschritts-Seite -->
+<div id="mission-input-area">
+    <input type="text" id="mission-code" placeholder="Agenten-Code hier eingeben...">
+    <button onclick="checkMission()">Mission validieren</button>
+</div>
+
+
+<script>
+function checkMission() {
+    const input = document.getElementById('mission-code').value.trim();
+    
+    // Wir prüfen, ob es der korrekte Code für 'Strings' ist
+    if (input === "TUlTU0lPTi1TVFJJTkdTLUNPTVBMRVRF") {
+        // Status im Browser der Teilnehmerin speichern
+        localStorage.setItem('meilenstein_strings', 'completed');
+        alert("Zugriff gewährt! Meilenstein STRINGS freigeschaltet.");
+        updateProgressBar(); // Funktion, die den Balken visuell bewegt
+    } else {
+        alert("Code ungültig. Überprüfen Sie Ihre Eingabe in der Werkstatt.");
+    }
+}
+
+
+function updateProgressBar() {
+    if (localStorage.getItem('meilenstein_strings') === 'completed') {
+        document.getElementById('knoten-strings').style.backgroundColor = "#00ff00";
+        document.getElementById('knoten-strings').style.boxShadow = "0 0 15px #00ff00";
+    }
+}
+
+
+// Beim Laden der Seite den Stand prüfen
+window.onload = updateProgressBar;
+</script>
+
 </body>  
