@@ -52,6 +52,16 @@ del {
 
 
 <script>
+    // Speichern, wenn ein Meilenstein erreicht wurde (z.B. im Jupyter Notebook Code-Feld generiert)
+localStorage.setItem('meilenstein_strings', 'completed');
+
+
+// Auslesen auf der Fortschritts-Seite
+if (localStorage.getItem('meilenstein_strings') === 'completed') {
+    document.getElementById('knoten-1').classList.add('glow-green');
+}
+
+    
 function checkMission() {
     const input = document.getElementById('mission-code').value.trim();
     
