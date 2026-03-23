@@ -51,6 +51,11 @@ Warum das so genial einfach ist:
 Du sparst dir einen kompletten Logik-Schritt (den „Memory-Node“).
 Die Verbindung zwischen deiner Telegram-Nachricht und der Datei in der Cloud ist die Namensgleichheit.
 
-![Gesamter Workflow](
+![Gesamter Workflow](https://github.com/digital-compass-de/digital-compass-de.github.io/blob/main/werkstatt-ebook-architect/gesamterWorklflow-ebook.png)
+
+## Accounts, APIs und Token
+1. Google Sheets, Docs und Drive: Google Account: OAuth + API Freigabe -> siehe Google_API_einrichten.md
+2. Telegram: Telegram Bot einrichten, Token kopieren -> siehe TelegramBot_einrichten.md
+3. chatGPT: OpenAI API generieren, Token kopieren -> siehe OpenAI_API.md
 
 
