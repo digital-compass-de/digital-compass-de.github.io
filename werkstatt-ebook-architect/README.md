@@ -13,7 +13,7 @@
 **WEICHE** (n8n Switch Node)<br>
 [Leitet die Daten auf die Routen 1, 2 oder 3]<br>
 <br>
-![Master Eingang](https://github.com/digital-compass-de/digital-compass-de.github.io/blob/main/werkstatt-ebook-architect/Der%20Master-Eingang%20(Zentral).png)
+![Master Eingang](https://github.com/digital-compass-de/digital-compass-de.github.io/blob/main/werkstatt-ebook-architect/bilder/Der%20Master-Eingang%20(Zentral).png)
 
 ## 2. Die 3 Produktionsstraßen (Routen)
 
@@ -51,7 +51,7 @@ Warum das so genial einfach ist:
 Du sparst dir einen kompletten Logik-Schritt (den „Memory-Node“).
 Die Verbindung zwischen deiner Telegram-Nachricht und der Datei in der Cloud ist die Namensgleichheit.
 
-![Gesamter Workflow](https://github.com/digital-compass-de/digital-compass-de.github.io/blob/main/werkstatt-ebook-architect/gesamterWorklflow-ebook.png)
+![Gesamter Workflow](https://github.com/digital-compass-de/digital-compass-de.github.io/blob/main/werkstatt-ebook-architect/bilder/gesamterWorklflow-ebook.png)
 
 ## Accounts, APIs und Token
 1. Google Sheets, Docs und Drive: Google Account: OAuth + API Freigabe -> siehe Google_API_einrichten.md
