@@ -13,6 +13,8 @@
 **WEICHE** (n8n Switch Node)<br>
 [Leitet die Daten auf die Routen 1, 2 oder 3]<br>
 <br>
+![Master Eingang](https://github.com/digital-compass-de/digital-compass-de.github.io/blob/main/werkstatt-ebook-architect/Der%20Master-Eingang%20(Zentral).png)
+
 ## 2. Die 3 Produktionsstraßen (Routen)
 
 **ROUTE 1:** Projekt-Taufe (Befehl: thema: ...)
@@ -21,7 +23,7 @@
 - Python (Zerleger): Verwandelt den Textblock der KI in 5 saubere Zeilen für die Tabelle. [1, 2, 3]
 - Google Sheets (Append): Schreibt die Kapitelnamen in das neue Sheet.
 - Telegram (Feedback): Meldet dir den Erfolg ins Café.
-<br>
+
 **ROUTE 2:** Schreib-Modus (Befehl: thema: ..., kapitel: 2)
 * Google Drive (Search): Sucht Datei EBOOK_Projektname -> ID gefunden!
 * Google Sheets (Read): Holt die Überschrift von Kapitel 2 aus dieser ID.
@@ -29,14 +31,26 @@
 * Python (Formatter): Bereinigt den KI-Text (entfernt unnötige Zeichen, korrigiert Abstände). [2, 3]
 * Google Sheets (Update): Schreibt den sauberen Text zurück ins Sheet.
 * Telegram (Feedback): Meldet: "Kapitel 2 ist im Kasten, Agent!"
-<br>
+
 **ROUTE 3:** Finale (Befehl: thema: ..., finale)
 + Google Drive (Search): Sucht Datei EBOOK_Projektname -> ID gefunden!
 + Google Sheets (Read All): Holt alle 5 Kapitel ab.
 + Python (Assembler): Das Herzstück! Klebt alles zusammen, baut das Inhaltsverzeichnis und setzt das Layout. [3]
 + Google Doc (Upload): Erstellt das finale Dokument.
 + Telegram (Abschluss): Schickt dir den Download-Link direkt aufs Handy.
-<br>
 
+## Erläuterung zum Router (Code Node in Python)
+1. Der „Python Router“ am Anfang des gesamten Workflows hat den Namen ja schon einmal aus deiner Nachricht extrahiert (z. B. mit split("thema:")[1]).
+2. Diesen Namen schleift n8n einfach als Variable durch den gesamten Prozess.
+Warum das so genial einfach ist:
+
++ In Route 1 (Anlegen): Der Google Sheets Node bekommt den Befehl: „Erstelle Datei mit Name: EBOOK_ + {{ $json.thema }}“.
++ In Route 2 (Suchen): Der Google Drive Node bekommt den Befehl: „Suche Datei, deren Name ist: EBOOK_ + {{ $json.thema }}“.
+
+**Das Ergebnis:**
+Du sparst dir einen kompletten Logik-Schritt (den „Memory-Node“).
+Die Verbindung zwischen deiner Telegram-Nachricht und der Datei in der Cloud ist die Namensgleichheit.
+
+![Gesamter Workflow](
 
 
