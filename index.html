@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DIGITAL COMPASS – KI-Kompetenz für Führungskräfte</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --ink:       #0f1117;
+      --paper:     #f5f2ec;
+      --accent:    #1a3a5c;
+      --gold:      #b89a5a;
+      --light:     #e8e4db;
+      --muted:     #6b6660;
+      --white:     #ffffff;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--accent);
+      color: var(--white);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 2px solid var(--gold);
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--white);
+    }
+    .logo span { color: var(--gold); }
+    nav a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      margin-left: 2rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--gold); }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--accent);
+      color: var(--white);
+      padding: 6rem 2rem 5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(184,154,90,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-label {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.4rem 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 900;
+      line-height: 1.15;
+      max-width: 820px;
+      margin: 0 auto 1.5rem;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      font-weight: 300;
+    }
+    .hero-cta {
+      display: inline-flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--ink);
+      padding: 0.9rem 2.2rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: opacity 0.2s;
+    }
+    .btn-primary:hover { opacity: 0.85; }
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.4);
+      color: var(--white);
+      padding: 0.9rem 2.2rem;
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: border-color 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ── SECTION BASE ── */
+    section { padding: 5rem 2rem; }
+    .container { max-width: 960px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    p { color: var(--muted); margin-bottom: 1rem; }
+    p strong { color: var(--ink); }
+
+    /* ── DIVIDER ── */
+    .divider {
+      width: 48px;
+      height: 2px;
+      background: var(--gold);
+      margin: 1.5rem 0;
+    }
+
+    /* ── WERKSTATT ── */
+    .werkstatt {
+      background: var(--ink);
+      color: var(--white);
+    }
+    .werkstatt .section-label { color: var(--gold); }
+    .werkstatt h2 { color: var(--white); }
+    .werkstatt p { color: rgba(255,255,255,0.65); }
+    .werkstatt .divider { background: var(--gold); }
+
+    .werkstatt-intro {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.85);
+      border-left: 3px solid var(--gold);
+      padding-left: 1.5rem;
+      margin: 2rem 0 3rem;
+      line-height: 1.6;
+    }
+
+    .blueprint-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5px;
+      background: rgba(255,255,255,0.08);
+      margin-top: 2.5rem;
+    }
+    .blueprint-card {
+      background: #161b26;
+      padding: 2rem;
+      position: relative;
+      transition: background 0.2s;
+    }
+    .blueprint-card:hover { background: #1d2436; }
+    .bp-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(184,154,90,0.4);
+      padding: 0.25rem 0.6rem;
+      margin-bottom: 1rem;
+    }
+    .blueprint-card h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .blueprint-card p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 1.25rem;
+    }
+    .bp-placeholder {
+      border: 1px dashed rgba(184,154,90,0.3);
+      padding: 1rem;
+      font-size: 0.8rem;
+      color: rgba(184,154,90,0.5);
+      font-style: italic;
+      text-align: center;
+    }
+    .bp-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+      opacity: 0.7;
+    }
+
+    /* ── VOR / NACH ── */
+    .transformation { background: var(--white); }
+    .vor-nach-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--light);
+      margin-top: 2.5rem;
+    }
+    .vor-box, .nach-box {
+      padding: 2rem 2.5rem;
+    }
+    .vor-box { background: var(--white); }
+    .nach-box { background: var(--accent); color: var(--white); }
+    .box-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+    .nach-box .box-label { color: var(--gold); }
+    .vor-item, .nach-item {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.95rem;
+    }
+    .vor-item { color: var(--muted); }
+    .nach-item { color: rgba(255,255,255,0.9); }
+    .vor-item::before { content: '—'; color: var(--light); flex-shrink: 0; }
+    .nach-item::before { content: '✓'; color: var(--gold); flex-shrink: 0; font-weight: 700; }
+
+    /* ── FÜR WEN ── */
+    .fuer-wen { background: var(--paper); }
+    .berufe-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .beruf-card {
+      background: var(--white);
+      border-top: 3px solid var(--gold);
+      padding: 1.5rem;
+    }
+    .beruf-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+    .beruf-card h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.4rem;
+    }
+    .beruf-card p { font-size: 0.82rem; color: var(--muted); margin: 0; }
+
+    .warning-box {
+      background: var(--accent);
+      color: var(--white);
+      padding: 2rem 2.5rem;
+      margin-top: 2.5rem;
+      border-left: 4px solid var(--gold);
+    }
+    .warning-box p {
+      color: rgba(255,255,255,0.85);
+      margin: 0;
+      font-size: 1rem;
+    }
+    .warning-box strong { color: var(--gold); }
+
+    /* ── CURRICULUM ── */
+    .curriculum { background: var(--white); }
+    .module-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .module-card {
+      border: 1px solid var(--light);
+      padding: 2rem;
+      position: relative;
+    }
+    .module-num {
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      background: var(--gold);
+      color: var(--ink);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 0.3rem 0.75rem;
+      text-transform: uppercase;
+    }
+    .module-card h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 1.5rem 0 1rem;
+      color: var(--ink);
+    }
+    .module-card ul {
+      list-style: none;
+      padding: 0;
+    }
+    .module-card ul li {
+      font-size: 0.88rem;
+      color: var(--muted);
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--light);
+      display: flex;
+      gap: 0.6rem;
+      align-items: flex-start;
+    }
+    .module-card ul li:last-child { border-bottom: none; }
+    .module-card ul li::before {
+      content: '›';
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* ── METHODE ── */
+    .methode { background: var(--accent); color: var(--white); }
+    .methode .section-label { color: var(--gold); }
+    .methode h2 { color: var(--white); }
+    .methode p { color: rgba(255,255,255,0.7); }
+    .methode-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: rgba(255,255,255,0.08);
+      margin-top: 2.5rem;
+    }
+    .methode-item {
+      background: rgba(255,255,255,0.03);
+      padding: 2rem;
+    }
+    .methode-item .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: rgba(184,154,90,0.25);
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .methode-item h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .methode-item p { font-size: 0.85rem; color: rgba(255,255,255,0.55); margin: 0; }
+
+    .niveaus {
+      margin-top: 3rem;
+      background: rgba(255,255,255,0.05);
+      padding: 2rem;
+      border-left: 3px solid var(--gold);
+    }
+    .niveaus h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .niveau-row {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.7);
+    }
+    .niveau-row strong { color: var(--white); min-width: 140px; }
+
+    /* ── ORT ── */
+    .ort { background: var(--paper); }
+    .ort-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+      margin-top: 2rem;
+    }
+    .ort-details { }
+    .ort-detail-item {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      align-items: flex-start;
+    }
+    .ort-detail-item .icon {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+    .ort-detail-item div { font-size: 0.92rem; color: var(--muted); }
+    .ort-detail-item div strong { color: var(--ink); display: block; }
+
+    .tagesplan {
+      background: var(--white);
+      border: 1px solid var(--light);
+      padding: 2rem;
+    }
+    .tagesplan h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+    .time-row {
+      display: flex;
+      gap: 1rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--light);
+      font-size: 0.85rem;
+    }
+    .time-row:last-child { border-bottom: none; }
+    .time { min-width: 90px; font-weight: 600; color: var(--accent); }
+    .activity { color: var(--muted); }
+    .time-row.highlight .activity { color: var(--ink); font-weight: 500; }
+    .time-row.free .activity { color: var(--gold); }
+    .week-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 1.25rem 0 0.5rem;
+    }
+
+    /* ── BARBARA ── */
+    .barbara { background: var(--white); }
+    .barbara-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .barbara-visual {
+      background: var(--accent);
+      aspect-ratio: 3/4;
+      display: flex;
+      align-items: flex-end;
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .barbara-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(184,154,90,0.15) 0%, transparent 60%);
+    }
+    .barbara-visual .initials {
+      font-family: 'Playfair Display', serif;
+      font-size: 6rem;
+      font-weight: 900;
+      color: rgba(255,255,255,0.06);
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      line-height: 1;
+    }
+    .barbara-visual .name-tag {
+      position: relative;
+      z-index: 1;
+    }
+    .barbara-visual .name-tag .name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--white);
+      font-weight: 700;
+    }
+    .barbara-visual .name-tag .role {
+      font-size: 0.75rem;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .barbara-text h2 { margin-bottom: 0.5rem; }
+    .stat-row {
+      display: flex;
+      gap: 2rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+    .stat { }
+    .stat .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .stat .label { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+
+    /* ── PREIS ── */
+    .preis { background: var(--paper); }
+    .preis-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--light);
+      margin-top: 2.5rem;
+    }
+    .preis-card {
+      background: var(--white);
+      padding: 2.5rem;
+    }
+    .preis-card.featured {
+      background: var(--accent);
+      color: var(--white);
+    }
+    .preis-card .card-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .preis-card.featured .card-label { color: var(--gold); }
+    .preis-amount {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+    .preis-card.featured .preis-amount { color: var(--white); }
+    .preis-sub { font-size: 0.85rem; color: var(--muted); margin-bottom: 2rem; }
+    .preis-card.featured .preis-sub { color: rgba(255,255,255,0.6); }
+    .preis-includes {
+      list-style: none;
+      padding: 0;
+    }
+    .preis-includes li {
+      font-size: 0.88rem;
+      color: var(--muted);
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--light);
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+    }
+    .preis-card.featured .preis-includes li {
+      color: rgba(255,255,255,0.75);
+      border-bottom-color: rgba(255,255,255,0.1);
+    }
+    .preis-includes li::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+    .preis-includes li:last-child { border-bottom: none; }
+
+    .preis-main {
+      background: var(--white);
+      border-top: 4px solid var(--gold);
+      padding: 3rem;
+      max-width: 560px;
+      margin-top: 2.5rem;
+    }
+    .preis-amount-big {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+    .preis-main-sub {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+    .preis-includes-main {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 1.5rem;
+    }
+    .preis-includes-main li {
+      font-size: 0.92rem;
+      color: var(--muted);
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--light);
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+    }
+    .preis-includes-main li:last-child { border-bottom: none; }
+    .preis-includes-main li::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+    .preis-unterkunft-note {
+      font-size: 0.82rem;
+      color: var(--muted);
+      border-top: 1px solid var(--light);
+      padding-top: 1rem;
+      margin-top: 0.5rem;
+    }
+    .preis-rate-note {
+      font-size: 0.78rem;
+      color: rgba(107,102,96,0.6);
+      margin-top: 0.5rem;
+      margin-bottom: 0;
+    }
+
+    /* ── NACH DEM KURS ── */
+    .nach-kurs { background: var(--ink); color: var(--white); }
+    .nach-kurs .section-label { color: var(--gold); }
+    .nach-kurs h2 { color: var(--white); }
+    .nach-kurs p { color: rgba(255,255,255,0.65); }
+    .discord-box {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(184,154,90,0.3);
+      padding: 2.5rem;
+      margin-top: 2.5rem;
+    }
+    .discord-box h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .discord-points {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+    .discord-points li {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.6);
+      display: flex;
+      gap: 0.6rem;
+    }
+    .discord-points li::before { content: '›'; color: var(--gold); font-weight: 700; }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: var(--accent);
+      color: var(--white);
+      text-align: center;
+      padding: 6rem 2rem;
+    }
+    .cta-section h2 {
+      color: var(--white);
+      max-width: 640px;
+      margin: 0 auto 1rem;
+    }
+    .cta-section p { color: rgba(255,255,255,0.7); max-width: 480px; margin: 0 auto 2.5rem; }
+    .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    .termin-badge {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(184,154,90,0.12);
+      border: 1px solid rgba(184,154,90,0.3);
+      padding: 1rem 2rem;
+      margin-bottom: 3rem;
+    }
+    .termin-badge .t-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+    .termin-badge .t-date { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--white); }
+    .termin-badge .t-sub { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    footer a { color: var(--gold); text-decoration: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { display: none; }
+      .vor-nach-grid { grid-template-columns: 1fr; }
+      .methode-grid { grid-template-columns: 1fr; }
+      .ort-grid { grid-template-columns: 1fr; }
+      .barbara-grid { grid-template-columns: 1fr; }
+      .preis-grid { grid-template-columns: 1fr; }
+      .discord-points { grid-template-columns: 1fr; }
+      .module-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">DIGITAL <span>COMPASS</span></div>
+  <nav>
+    <a href="#werkstatt">Werkstatt</a>
+    <a href="#curriculum">Curriculum</a>
+    <a href="#ort">Usedom</a>
+    <a href="#preis">Investition</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-label">2-Wochen Intensiv-Weiterbildung · Usedom · Dezember 2026</div>
+    <h1>KI ersetzt nicht die Managerin.<br><em>Aber die Managerin mit KI<br>ersetzt die ohne.</em></h1>
+    <p class="hero-sub">Hands-on Weiterbildung für Frauen in Führungspositionen — mit echten Skills, echten Projekten und Blueprints die sofort im Joballtag funktionieren.</p>
+    <div class="hero-cta">
+      <a href="#kontakt" class="btn-primary">Zur Vor-Anmeldung</a>
+      <a href="#werkstatt" class="btn-outline">Werkstatt ansehen</a>
+    </div>
+  </div>
+</section>
+
+<!-- WERKSTATT -->
+<section class="werkstatt" id="werkstatt">
+  <div class="container">
+    <div class="section-label">GitHub Werkstatt</div>
+    <h2>Willkommen in der Werkstatt.</h2>
+    <div class="divider"></div>
+    <blockquote class="werkstatt-intro">
+      Hier liegen die Baupläne für deine Automatisierung. Transparent, hands-on und direkt anwendbar — bevor du auch nur einen Euro investierst.
+    </blockquote>
+    <p>Kein Coaching-PDF. Keine Versprechen. Echte Workflows, echte Blueprints, echter Code. Was im Kurs gelehrt wird, liegt offen in der Werkstatt — dokumentiert, nachvollziehbar, zum Nachbauen.</p>
+    <p>Ein Blueprint zeigt eine vollständig automatisierte Aufgabe: das Problem, den Lösungsweg, den fertigen Workflow als JSON-Datei zum Download. Du siehst nicht nur das Ergebnis — du siehst jeden Schritt.</p>
+
+    <div class="blueprint-grid">
+
+      <div class="blueprint-card">
+        <span class="bp-tag">Marketing & PR</span>
+        <h3>Blueprint: Content-Automatisierung</h3>
+        <p>Vollautomatischer Workflow von der Recherche bis zur Veröffentlichung.</p>
+        <div class="bp-placeholder">Blueprint wird hinzugefügt →</div>
+      </div>
+
+      <div class="blueprint-card">
+        <span class="bp-tag">HR & Recruiting</span>
+        <h3>Blueprint: Bewerbungsscreening</h3>
+        <p>KI-gestützter Vorfilter für eingehende Bewerbungen.</p>
+        <div class="bp-placeholder">Blueprint wird hinzugefügt →</div>
+      </div>
+
+      <div class="blueprint-card">
+        <span class="bp-tag">Finance & Controlling</span>
+        <h3>Blueprint: Report-Automatisierung</h3>
+        <p>Standardisierte Reports und Abweichungsanalysen auf Knopfdruck.</p>
+        <div class="bp-placeholder">Blueprint wird hinzugefügt →</div>
+      </div>
+
+      <div class="blueprint-card">
+        <span class="bp-tag">Recht & Verwaltung</span>
+        <h3>Blueprint: Dokumenten-Workflow</h3>
+        <p>Automatisierte Verarbeitung und Klassifikation von Dokumenten.</p>
+        <div class="bp-placeholder">Blueprint wird hinzugefügt →</div>
+      </div>
+
+    </div>
+
+    <p style="margin-top:2rem; font-size:0.85rem; color:rgba(255,255,255,0.35);">
+      Alle Blueprints inklusive Screenshots, Erklärungen und JSON-Dateien · Gehostet auf GitHub · Kein Account erforderlich zum Ansehen
+    </p>
+  </div>
+</section>
+
+<!-- TRANSFORMATION: VOR / NACH -->
+<section class="transformation">
+  <div class="container">
+    <div class="section-label">Der Unterschied</div>
+    <h2>Was sich nach 2 Wochen verändert hat.</h2>
+    <div class="divider"></div>
+
+    <div class="vor-nach-grid">
+      <div class="vor-box">
+        <div class="box-label">Vorher</div>
+        <div class="vor-item">„Ich warte auf die IT-Abteilung wenn etwas hakt — das dauert Tage."</div>
+        <div class="vor-item">„No-Code-Tools funktionieren bis sie es nicht mehr tun. Dann komme ich nicht weiter."</div>
+        <div class="vor-item">„KI ist ein Thema das ich beobachte. Ich weiß nicht wie ich es einsetzen soll."</div>
+        <div class="vor-item">„Ich verbringe Stunden mit Reports die eigentlich automatisch laufen könnten."</div>
+        <div class="vor-item">„Ich verstehe die Logik hinter den Tools nicht — ich klicke mich durch."</div>
+      </div>
+      <div class="nach-box">
+        <div class="box-label">Nach Digital Compass</div>
+        <div class="nach-item">Du verstehst was hinter den Tools passiert. Du löst Probleme selbst — in Minuten statt Tagen.</div>
+        <div class="nach-item">Wenn No-Code an Grenzen stößt, weißt du warum und wie du es umgehst.</div>
+        <div class="nach-item">Du hast KI-Workflows gebaut, die in deinem Joballtag bereits laufen.</div>
+        <div class="nach-item">Dein erster Blueprint läuft automatisch. Du weißt wie du den nächsten baust.</div>
+        <div class="nach-item">Du denkst in Prozessen und erkennst welche Aufgaben automatisierbar sind.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FÜR WEN -->
+<section class="fuer-wen" id="zielgruppe">
+  <div class="container">
+    <div class="section-label">Zielgruppe</div>
+    <h2>Für Frauen, die die Werkzeuge<br>der Automatisierung beherrschen wollen.</h2>
+    <div class="divider"></div>
+    <p>Die KI-Welle trifft diesmal nicht die Fabrikhallen — sie trifft Wissensarbeit. Datenanalyse, Reporting, Content, Recruiting, Dokumentenprüfung: Tätigkeiten in denen Frauen mit guten Gehältern stark vertreten sind. Wer die Werkzeuge kennt, wird nicht ersetzt — wer sie nicht kennt, schaut zu.</p>
+
+    <div class="berufe-grid">
+      <div class="beruf-card">
+        <div class="beruf-icon">📊</div>
+        <h3>Marketing & Brand</h3>
+        <p>Senior Marketing Manager, Brand Director, Content Lead</p>
+      </div>
+      <div class="beruf-card">
+        <div class="beruf-icon">📣</div>
+        <h3>Communications & PR</h3>
+        <p>PR-Managerin, Communications Lead, Pressesprecherin</p>
+      </div>
+      <div class="beruf-card">
+        <div class="beruf-icon">👥</div>
+        <h3>HR & Talent</h3>
+        <p>HR Business Partner, Head of Recruiting, People Manager</p>
+      </div>
+      <div class="beruf-card">
+        <div class="beruf-icon">📈</div>
+        <h3>Finance & Controlling</h3>
+        <p>Senior Controllerin, Finance Manager, Risk Analyst</p>
+      </div>
+      <div class="beruf-card">
+        <div class="beruf-icon">⚖️</div>
+        <h3>Recht & Verwaltung</h3>
+        <p>In-house Counsel, Compliance, Verwaltungsmanagerin</p>
+      </div>
+      <div class="beruf-card">
+        <div class="beruf-icon">🗂️</div>
+        <h3>Project & Consulting</h3>
+        <p>IT-Projektleiterin, Senior Consultant, Business Analyst</p>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <p>Du brauchst <strong>keine Programmiererfahrung.</strong> Du brauchst die Bereitschaft, Logik zu verstehen — nicht auswendig zu lernen. Wer komplexe Geschäftsprozesse managt, bringt das Fundament bereits mit.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section class="curriculum" id="curriculum">
+  <div class="container">
+    <div class="section-label">Curriculum</div>
+    <h2>Was du in 2 Wochen aufbaust.</h2>
+    <div class="divider"></div>
+    <p>Kein Überblick-Seminar. Kein Zuschauen. Du baust, du verstehst, du nimmst Ergebnisse mit die sofort einsetzbar sind.</p>
+
+    <div class="module-grid">
+
+      <div class="module-card">
+        <span class="module-num">Modul 01</span>
+        <h3>🖥 IT-Infrastruktur & Linux</h3>
+        <ul>
+          <li>Technologische Unabhängigkeit: eigener Cloud-Server statt teure Abo-Fallen</li>
+          <li>Ubuntu/Linux Basics — die Grundlage für alles was folgt</li>
+          <li>Command Line für Entscheiderinnen: direkter Weg zur Automatisierung</li>
+          <li>IT-Prozesse verstehen — auf Augenhöhe mit der IT-Abteilung kommunizieren</li>
+          <li>Cloud-Server einrichten, n8n installieren, KI-Agenten deployen</li>
+        </ul>
+      </div>
+
+      <div class="module-card">
+        <span class="module-num">Modul 02</span>
+        <h3>🧠 Code-Literacy & Prozesslogik</h3>
+        <ul>
+          <li>Code lesen wie eine Fremdsprache — gesunder Menschenverstand reicht</li>
+          <li>Geschäftsprozesse in automatisierbare Bausteine zerlegen</li>
+          <li>Python im Einsatz: eine Zeile Logik statt 20 fehleranfällige Klicks</li>
+          <li>Wo No-Code-Tools an Grenzen stoßen — und wie du weiterkommst</li>
+          <li>Workflow-Dekonstruktion: denken wie eine Architektin, nicht wie eine Anwenderin</li>
+        </ul>
+      </div>
+
+      <div class="module-card">
+        <span class="module-num">Modul 03</span>
+        <h3>🤖 KI & Automation mit n8n</h3>
+        <ul>
+          <li>Was KI kann — und was sie nicht kann</li>
+          <li>n8n: Workflows bauen, testen, deployen auf eigenem Server</li>
+          <li>Make & n8n kombinieren: das Best-of-Both-Worlds Prinzip</li>
+          <li>KI-Agenten verstehen und einsetzen (PicoClaw, API-Anbindungen)</li>
+          <li>Blueprints: eine vollständige Aufgabe von A bis Z automatisieren</li>
+        </ul>
+      </div>
+
+      <div class="module-card">
+        <span class="module-num">Modul 04</span>
+        <h3>📐 Blueprints & Hands-on Projekte</h3>
+        <ul>
+          <li>Analyse eigener Arbeitsprozesse: was ist automatisierbar?</li>
+          <li>Eigenen Blueprint entwickeln — vollständig dokumentiert zum Mitnehmen</li>
+          <li>KI-gestützte Automatisierung für deine Berufsgruppe</li>
+          <li>Datengestütztes Arbeiten: Reports, Analysen, Monitoring automatisieren</li>
+          <li>Abschlussprojekt: fertiger Workflow der ab Tag 1 nach dem Kurs läuft</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- METHODE -->
+<section class="methode">
+  <div class="container">
+    <div class="section-label">Methode</div>
+    <h2>Wie wir arbeiten.</h2>
+    <div class="divider" style="background:var(--gold);"></div>
+    <p>Nicht wie ein Seminar. Nicht wie ein Webinar. Kein Zuschauen und Nicken.</p>
+
+    <div class="methode-grid">
+      <div class="methode-item">
+        <div class="num">01</div>
+        <h3>Verstehen</h3>
+        <p>Du siehst nicht nur das Endergebnis — du erlebst den Denkprozess dahinter. Jeder Schritt wird erklärt bis er sitzt.</p>
+      </div>
+      <div class="methode-item">
+        <div class="num">02</div>
+        <h3>Bauen</h3>
+        <p>Hands-on Projekte von Anfang an. Du baust, machst Fehler, verstehst warum — und baust besser.</p>
+      </div>
+      <div class="methode-item">
+        <div class="num">03</div>
+        <h3>Mitnehmen</h3>
+        <p>Du gehst mit fertigen Blueprints, eigenem Workflow und dem Werkzeug-Set um das nächste selbst zu bauen.</p>
+      </div>
+    </div>
+
+    <div class="niveaus">
+      <h3>3 Niveaustufen — niemand wird abgehängt</h3>
+      <div class="niveau-row"><strong>Einsteigerin</strong> Du wirst abgeholt wo du stehst. Kein Vorwissen vorausgesetzt.</div>
+      <div class="niveau-row"><strong>Grundkenntnisse</strong> Du wirst gefordert und gehst gezielt in die Tiefe.</div>
+      <div class="niveau-row"><strong>Fortgeschritten</strong> Du arbeitest an komplexeren Projekten und Verbindungen.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ORT -->
+<section class="ort" id="ort">
+  <div class="container">
+    <div class="section-label">Ort & Tagesplan</div>
+    <h2>Usedom. Raus aus dem Tagesgeschäft.</h2>
+    <div class="divider"></div>
+    <p>Tiefes Lernen braucht Abstand vom Büro-Alltag. Zwei Wochen ohne Meeting-Unterbrechungen, ohne E-Mail-Flut, ohne halbfertige Gedanken. Nur Fokus — und Raum für das was danach kommt.</p>
+
+    <div class="ort-grid">
+      <div class="ort-details">
+        <div class="ort-detail-item">
+          <div class="icon">🏡</div>
+          <div><strong>Reetdachhaus auf Usedom</strong>Arbeits- und Wohnzimmer für gemeinsames Arbeiten und Erholen. Küche für gemeinsames Frühstück.</div>
+        </div>
+        <div class="ort-detail-item">
+          <div class="icon">🍽</div>
+          <div><strong>Vollpension inklusive</strong>Gemeinsam frühstücken und kochen wenn du willst — kein Zwang.</div>
+        </div>
+        <div class="ort-detail-item">
+          <div class="icon">👩‍💻</div>
+          <div><strong>4–6 Teilnehmerinnen</strong>Kleine Gruppe, intensive Betreuung, echter Austausch auf Augenhöhe.</div>
+        </div>
+        <div class="ort-detail-item">
+          <div class="icon">🏖</div>
+          <div><strong>Freie Zeit am Nachmittag</strong>Strandspaziergang, Austausch, Abstand. Verarbeitung gehört zum Lernen.</div>
+        </div>
+        <div class="ort-detail-item">
+          <div class="icon">🐕</div>
+          <div><strong>Hunde willkommen</strong></div>
+        </div>
+      </div>
+
+      <div class="tagesplan">
+        <h3>Tagesplan Mo – Fr</h3>
+        <div class="week-label">Morgen</div>
+        <div class="time-row"><span class="time">Früh</span><span class="activity">Gemeinsames Frühstück</span></div>
+        <div class="time-row highlight"><span class="time">9:00–10:30</span><span class="activity">Arbeitsblock I (90 min)</span></div>
+        <div class="time-row"><span class="time">10:30–10:45</span><span class="activity">Pause</span></div>
+        <div class="time-row highlight"><span class="time">10:45–12:15</span><span class="activity">Arbeitsblock II (90 min)</span></div>
+        <div class="time-row"><span class="time">12:15–13:00</span><span class="activity">Mittagspause · Salatbuffet</span></div>
+        <div class="time-row highlight"><span class="time">13:00–14:30</span><span class="activity">Arbeitsblock III (90 min)</span></div>
+        <div class="time-row"><span class="time">14:30</span><span class="activity">Kaffee & Abschlussbesprechung</span></div>
+        <div class="week-label">Nachmittag / Abend</div>
+        <div class="time-row free"><span class="time">Ab 15:00</span><span class="activity">Freie Zeit 🏖</span></div>
+        <div class="time-row"><span class="time">18:00</span><span class="activity">Essen, kochen, grillen</span></div>
+
+        <div class="week-label">Wochenende</div>
+        <div class="time-row"><span class="time">Sonntag 1</span><span class="activity">Ankommen</span></div>
+        <div class="time-row"><span class="time">Samstag 1</span><span class="activity">Wiederholung & Vorbereitung</span></div>
+        <div class="time-row"><span class="time">Sonntag 2</span><span class="activity">Projekt-Tag</span></div>
+        <div class="time-row"><span class="time">Samstag 2</span><span class="activity">Zusammenfassung & Abreise</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BARBARA -->
+<section class="barbara" id="barbara">
+  <div class="container">
+    <div class="barbara-grid">
+      <div class="barbara-visual">
+        <div class="initials">B</div>
+        <div class="name-tag">
+          <div class="name">Barbara</div>
+          <div class="role">IT-Expertin · Coach · Pragmatikerin</div>
+        </div>
+      </div>
+      <div class="barbara-text">
+        <div class="section-label">Deine Trainerin</div>
+        <h2>30 Jahre IT.<br>Kein Bla-Bla.</h2>
+        <div class="divider"></div>
+        <div class="stat-row">
+          <div class="stat"><div class="num">30</div><div class="label">Jahre IT-Praxis</div></div>
+          <div class="stat"><div class="num">90er</div><div class="label">Erste Website Berlin</div></div>
+          <div class="stat"><div class="num">∞</div><div class="label">Projekte. Fehler. Lösungen.</div></div>
+        </div>
+        <p>Ich bin kein Theoretiker. Ich habe drei Jahrzehnte lang IT-Systeme gebaut, betrieben und anderen beigebracht — von den frühen Webprojekten der 90er bis zu heutigen KI-Agenten und Automatisierungsworkflows.</p>
+        <p>Im Rahmen von "Madame Digital" habe ich digitale Skills an Frauen vermittelt — von IT-Grundlagen über Programmierung bis Online-Marketing. DIGITAL COMPASS ist die Weiterentwicklung dieser Arbeit: konkreter, tiefer, hands-on.</p>
+        <p><strong>Was ich lehre, nutze ich selbst. Die Werkstatt auf GitHub ist meine eigene Infrastruktur — offen einsehbar, ohne Hochglanz-Versprechen.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PREIS -->
+<section class="preis" id="preis">
+  <div class="container">
+    <div class="section-label">Investition</div>
+    <h2>Was es kostet — und was du bekommst.</h2>
+    <div class="divider"></div>
+
+    <div class="preis-main">
+      <div class="preis-amount-big">2.750 €</div>
+      <div class="preis-main-sub">pro Person · berufliche Weiterbildung</div>
+      <ul class="preis-includes preis-includes-main">
+        <li>2 Wochen Intensiv-Weiterbildung auf Usedom</li>
+        <li>Verpflegung während der Kurszeiten inklusive</li>
+        <li>Alle Materialien & Blueprints</li>
+        <li>Zugang zur privaten Discord-Community</li>
+        <li>Abschlussprojekt mit persönlichem Blueprint</li>
+      </ul>
+      <p class="preis-unterkunft-note">Unterkunft wird individuell gebucht — Empfehlungen für die Region werden bereitgestellt.</p>
+      <p class="preis-rate-note">Ratenzahlung möglich: 6 × 500 €</p>
+    </div>
+  </div>
+</section>
+
+<!-- NACH DEM KURS -->
+<section class="nach-kurs">
+  <div class="container">
+    <div class="section-label">Nach dem Kurs</div>
+    <h2>Das Netzwerk bleibt.</h2>
+    <div class="divider" style="background:var(--gold);"></div>
+    <p>Der Kurs endet. Der Zugang zur Community nicht.</p>
+
+    <div class="discord-box">
+      <h3>Private Discord-Community</h3>
+      <ul class="discord-points">
+        <li>Fragen stellen wenn im Joballtag etwas hakt</li>
+        <li>Anderen helfen und dabei weiterlernen</li>
+        <li>An gemeinsamen Projekten arbeiten</li>
+        <li>Auf dem Laufenden bleiben über neue Tools und Entwicklungen</li>
+      </ul>
+      <p style="margin-top:1.5rem; font-size:0.85rem; color:rgba(255,255,255,0.4);">
+        Start der kostenlosen Discord-Community: Ab August 2026 — auch vor dem Bootcamp schon dabei sein.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="kontakt">
+  <div class="container">
+    <div class="termin-badge">
+      <span class="t-label">Nächster Termin</span>
+      <span class="t-date">20. Dezember 2026 – 3. Januar 2027</span>
+      <span class="t-sub">Zwischen Weihnachten und Neujahr · Usedom</span>
+    </div>
+    <h2>Bereit, die Werkzeuge der Automatisierung zu beherrschen?</h2>
+    <p>Maximal 6 Plätze. Wer die Werkstatt kennt und weiß was sie will, ist hier richtig.</p>
+    <div class="cta-buttons">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdTfxrzME-P-jqsE3ZygQRiEDde2CtcO1S2oG2ruSXwPcCdyg/viewform" class="btn-primary">Zur Vor-Anmeldung</a>
+      <a href="mailto:janebabra@icloud.com" class="btn-outline">Frage stellen</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong style="color:rgba(255,255,255,0.6);">DIGITAL COMPASS</strong> &nbsp;·&nbsp; Finde deine Richtung. Gestalte deine Zukunft. &nbsp;·&nbsp; <a href="mailto:janebabra@icloud.com">janebabra@icloud.com</a></p>
+</footer>
+
+</body>
+</html>
