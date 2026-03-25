@@ -35,7 +35,7 @@ Mit diesem Account können anschiessend bis zu 20 Bots erstellt werden.
 ![Schritt 10](bilder/chatBot-erstellen-10.png)
 
 ### Schritt 11
-![Schritt 11](bilder/chatBot-erstellen-11.png)
+![Schritt 11](bilder/chatBot-erstellen-11-mybots.png)
 
 
 
