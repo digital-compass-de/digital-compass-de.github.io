@@ -5,37 +5,37 @@ Mit diesem Account können anschiessend bis zu 20 Bots erstellt werden.
 
 ## Schritt für Schritt zum eigenen Telegram Bot
 ### Schritt 1
-![Schritt 1](bilder/chatBot-erstellen-1.png)
+<img src="bilder/chatBot-erstellen-1.png" alt="Schritt 1 Telegram Bot" width="300" height="600">
 
 ### Schritt 2
-![Schritt 2](bilder/chatBot-erstellen-2.png)
+<img src="bilder/chatBot-erstellen-2.png" alt="Schritt 2 Telegram Bot" width="300" height="600">
 
 ### Schritt 3
-![Schritt 3](bilder/chatBot-erstellen-3.png)
+<img src="bilder/chatBot-erstellen-3.png" alt="Schritt 3 Telegram Bot" width="300" height="600">
 
 ### Schritt 4
-![Schritt 4](bilder/chatBot-erstellen-4.png)
+<img src="bilder/chatBot-erstellen-4.png" alt="Schritt 4 Telegram Bot" width="300" height="600">
 
 ### Schritt 5
-![Schritt 5](bilder/chatBot-erstellen-5.png)
+<img src="bilder/chatBot-erstellen-5.png" alt="Schritt 5 Telegram Bot" width="300" height="600">
 
 ### Schritt 6
-![Schritt 6](bilder/chatBot-erstellen-6.png)
+<img src="bilder/chatBot-erstellen-6.png" alt="Schritt 6 Telegram Bot" width="300" height="600">
 
 ### Schritt 7
-![Schritt 7](bilder/chatBot-erstellen-7.png)
+<img src="bilder/chatBot-erstellen-7.png" alt="Schritt 7 Telegram Bot" width="300" height="600">
 
 ### Schritt 8
-![Schritt 8](bilder/chatBot-erstellen-8.png)
+<img src="bilder/chatBot-erstellen-8.png" alt="Schritt 8 Telegram Bot" width="300" height="600">
 
 ### Schritt 9
-![Schritt 9](bilder/chatBot-erstellen-9.png)
+<img src="bilder/chatBot-erstellen-9.png" alt="Schritt 9 Telegram Bot" width="300" height="600">
 
 ### Schritt 10
-![Schritt 10](bilder/chatBot-erstellen-10.png)
+<img src="bilder/chatBot-erstellen-10.png" alt="Schritt 10 Telegram Bot" width="300" height="600">
 
 ### Schritt 11
-![Schritt 11](bilder/chatBot-erstellen-11-mybots.png)
+<img src="bilder/chatBot-erstellen-11-mybots.png" alt="Schritt 11 Telegram Bot" width="300" height="600">
 
 
 
