@@ -29,6 +29,7 @@ eigene Bots verwaltet werden können.<br>
 <img src="bilder/chatBot-erstellen-6.png" alt="Schritt 6 Telegram Bot" width="300" height="600">
 
 ### Schritt 7
+Auf COPY klicken und den Token für diesen Bot in die KI Automatisierung einfügen.
 <img src="bilder/chatBot-erstellen-7.png" alt="Schritt 7 Telegram Bot" width="300" height="600">
 
 ### Schritt 8
