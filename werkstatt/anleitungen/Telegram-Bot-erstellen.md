@@ -1,4 +1,4 @@
-# Telegram Bot für n8n oder make erstellen
+# Telegram Bot für n8n, make oder OpenClaw erstellen
 ### Als Trigger oder für die Kommunikation zwischen User und KI wird oft Telegram benutzt.
 Um Telegram für diese Zwecke nutzen zu können benötigt man zunächst einen Telegram Account. 
 Mit diesem Account können anschiessend bis zu 20 Bots erstellt werden.
