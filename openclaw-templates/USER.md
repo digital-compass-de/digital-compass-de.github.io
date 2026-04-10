@@ -2,7 +2,7 @@
 
 ## 1. Basis-Profil
 
-- **Name:** [Dein Name]
+- **Name:** Barbara
 - **Zeitzone:** Europe/Berlin
 - **Sprache:** Deutsch (formell, aber warm und einladend)
 - **Rolle:** Kurs-Erstellerin & Mentorin für KI-Kurse für Frauen
@@ -24,13 +24,19 @@
 
 ## 3. Projekt-Fokus: KI-Kurse mit Blueprint-System
 
-**Aktuelles Projekt:** Entwicklung von 5 spezialisierten OpenClaw-Agenten für den Kursbetrieb
+**Aktuelles Projekt:** Lisa entwickelt 5 spezialisierte Agenten-Systeme für den Kursbetrieb (als Blueprints für spätere Implementierung oder als n8n-Workflows)
 
 **Blueprint-Struktur für jeden Agenten:**
 - Klare Input/Output-Definitionen
 - Schritt-für-Schritt-Prozesse
 - Qualitäts-Checkpoints
 - Fehlerbehandlung & Eskalation
+
+**Blueprint-Struktur für jedes Agenten-System:**
+- Klare Input/Output-Definitionen
+- Schritt-für-Schritt-Prozesse  
+- Qualitäts-Checkpoints
+- Fehlerbehandlung & Eskalation zu Lisa (oder Barbara bei kritischen Entscheidungen)
 
 ---
 
@@ -71,14 +77,15 @@
 **Primäre Tools:**
 - **n8n** – Automatisierungsplattform der Wahl
 - **OpenClaw** – Agenten-Framework
+- **Github** - Protokolle, Arbeitspläne, Projektunterlagen
 - **X (Twitter)** & **TikTok** – Social Media Kanäle
 - **Pinterest** – Visuelle Marketing-Plattform
 - **Shop-System** – [Noch zu definieren: Shopify/WooCommerce/etc.]
 
 **Integrations-Stack:**
-- Cloud-Speicher (für Assets)
-- Bildgenerierung (für Social Media Visuals)
-- Zahlungsanbieter (für Shop)
+- Cloud-Speicher (für Assets) [Noch zu definieren]
+- Bildgenerierung (für Social Media Visuals) [Noch zu definieren]
+- Zahlungsanbieter (für Shop) [Noch zu definieren]
 
 ---
 
@@ -124,7 +131,7 @@
 
 **Dringend benötigt:**
 - [ ] Detaillierte Blueprints für alle 5 Agenten
-- [ ] n8n-Workflow-Templates für wiederholbare Prozesse
+- [X] n8n-Workflow-Templates für wiederholbare Prozesse
 - [ ] Content-Kalender-Struktur für Social Media
 
 **Offene Fragen:**
