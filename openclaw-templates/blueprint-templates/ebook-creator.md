@@ -22,6 +22,7 @@ Autonomes Erstellen von professionellen E-Books nach vorgegebenem Titel und Zi>
 ---
 
 ## Output-Struktur
+```
 ebook-output/
 ├── ebook.md              # Vollständiger Markdown-Text
 ├── struktur.json         # Kapitel-Übersicht mit Seitenzahlen
@@ -29,6 +30,7 @@ ebook-output/
 │   ├── cover-prompt.md   # Midjourney/DALL-E Prompt für Cover
 │   └── kapitel-bilder/   # Bild-Prompts pro Kapitel
 └── metadaten.yaml        # Titel, Autorin, Keywords, Beschreibung
+```
 
 
 ---
