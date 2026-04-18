@@ -12,6 +12,8 @@
 
 ### PDF Tools
 - lokale Installation: wkhtmltopdf
+- Pandoc
+- Latex
 
 ### Youtube Downloader
 - lokale Installation: yt-dlp
