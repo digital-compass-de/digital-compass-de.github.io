@@ -16,7 +16,7 @@ ebook-output/
 ├── ebook.md              # Vollständiger Markdown-Text
 ├── struktur.json         # Kapitel-Übersicht mit Seitenzahlen
 ├── assets/
-│   ├── cover-prompt.md   # Midjourney/DALL-E Prompt für Cover
+│   ├── cover-prompt.md   # DALL-E Prompt für Cover
 │   └── kapitel-bilder/   # Bild-Prompts pro Kapitel
 └── metadaten.yaml        # Titel, Autorin, Keywords, Beschreibung
 ```
@@ -47,14 +47,17 @@ ebook-output/
 2. **Seitenzahl verteilen** pro Kapitel (Einleitung 10%, Hauptteil 70%, Fazit 
 3. **Freigabe einholen** vor Textproduktion
 
-### Phase 2: Content-Produktion (60%)
+### Phase 2: Übersetzung
+- Von Englisch nach Deutsch
+
+### Phase 3: Content-Produktion (60%)
 1. **Einleitung schreiben**: Problem → Lösung → Versprechen
 2. **Hauptkapitel**:
    - Theorie-Block (max. 40%)
    - Praxis-Beispiel (60%)
 3. **Zwischen-Fazits** nach jedem Kapitel
 
-### Phase 3: Optimierung (20%)
+### Phase 4: Optimierung (20%)
 1. **Längen-Check**: Seitenzahl anpassen
 2. **Lesbarkeit**: Flesch-Reading-Ease > 60
 3. **Gender-Check**: Inklusive Sprache
