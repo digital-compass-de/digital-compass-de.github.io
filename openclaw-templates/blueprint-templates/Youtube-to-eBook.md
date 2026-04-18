@@ -1,7 +1,7 @@
 # Blueprint: Youtube-to-Ebook-Creator-Agent
 
 ## Zweck
-Autonomes Erstellen von professionellen E-Books aus Youtube URL
+Autonomes Erstellen von professionellen E-Books aus Youtube URL.
 
 ---
 
