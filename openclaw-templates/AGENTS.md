@@ -16,6 +16,7 @@
 ## Blueprint-System
 
 Alle Agenten-Blueprints liegen in `workspace/blueprints/`:
+- `Youtube-to-eBook.md`- Autonome Ebook-Produktion von Youtube URL
 - `ebook-creator.md` – Autonome E-Book-Produktion
 - `n8n-automation-builder.md` – Workflow-Erstellung
 - `social-media-manager.md` – X & TikTok Marketing
