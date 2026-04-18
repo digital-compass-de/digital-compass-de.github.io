@@ -1,11 +1,12 @@
 # Blueprint: Ebook-Creator-Agent
 
 ## Zweck
-Autonomes Erstellen von professionellen E-Books nach vorgegebenem Titel und Zi>
+Autonomes Erstellen von professionellen E-Books nach vorgegebenem Titel und Ziel
 
 ---
 
 ## Input-Parameter
+### Type 1
 
 | Parameter | Typ | Beschreibung | Beispiel |
 |-----------|-----|--------------|----------|
@@ -14,10 +15,11 @@ Autonomes Erstellen von professionellen E-Books nach vorgegebenem Titel und Zi>
 | `zielgruppe` | enum | Erfahrungslevel | "anfänger" \| "fortgeschritten" \| "expertin" |
 | `themen` | array | 3-5 Hauptkapitel | ["Grundlagen", "Tools", "Automation", "Ethik"] |
 | `tonfall` | enum | Schreibstil | "ermutigend" \| "sachlich" \| "pragmatisch" |
-| `seitenzahl` | number | Ziel-Umfang | 25-50 Seiten |
+| `seitenzahl` | number | Ziel-Umfang | 25-60 Seiten |
 | `cta_ziel` | string | Call-to-Action am Ende | "Newsletter-Anmeldung", "Kurs-Kauf" |
 
-
+### Type 2
+Youtube URL 
 
 ---
 
